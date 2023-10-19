@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "foundationex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Zean-Technology-Co-Ltd/FoundationEx.git",
+      "state" : {
+        "revision" : "8bb865c019a0225117ba73b5c16e3ce8f23ac5cb",
+        "version" : "1.0.7"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}
