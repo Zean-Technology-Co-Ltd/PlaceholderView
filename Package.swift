@@ -22,7 +22,8 @@ let package = Package(
                 "SnapKit",
                 "FoundationEx"
               ],
-            path: "PlaceholderView"),
+            resources: [.process("Resources")]
+       ),
         .testTarget(
             name: "PlaceholderViewTests",
             dependencies: ["PlaceholderView"]),
