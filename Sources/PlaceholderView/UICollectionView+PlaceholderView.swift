@@ -94,7 +94,7 @@ extension UICollectionView: Swizzling{
         return totalCount;
     }
     
-    var placeHoldView: PlaceholderView? {
+    public var placeHoldView: PlaceholderView? {
         get {
             return objc_getAssociatedObject(self, &PlaceHoldViewKey) as? PlaceholderView
         }
