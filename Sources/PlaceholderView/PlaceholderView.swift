@@ -162,14 +162,14 @@ open class PlaceholderView: UIView {
     private lazy var placeHolderLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: dtSize(14), weight: .regular)
-        label.textColor = UIColor(red: 156, green: 156, blue: 156, alpha: 1)
+        label.textColor = UIColor(red: 140/255, green: 140/255, blue: 140/255, alpha: 1)
         label.textAlignment = .center
         return label
     }()
     
     private lazy var refreshBtn: UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = UIColor(red: 21, green: 120, blue: 255, alpha: 1)
+        btn.backgroundColor = UIColor(red: 21/255, green: 120/255, blue: 255/255, alpha: 1)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         btn.layer.cornerRadius = 10
         btn.titleLabel?.text = "点击刷新"
