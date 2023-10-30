@@ -13,7 +13,7 @@ public enum PlaceholderViewType: Int{
     case other
 }
 
-public enum PlaceholderImage: Int, RawRepresentable{
+public enum PlaceholderImage: RawRepresentable{
     public init?(rawValue: String) {
         switch rawValue{
         case "pp_empty_icon":
@@ -30,6 +30,7 @@ public enum PlaceholderImage: Int, RawRepresentable{
     case common
     case network_faile
     case order
+    case other(img: UIImage)
     
     public typealias RawValue = String
     public var rawValue: RawValue{
@@ -40,6 +41,8 @@ public enum PlaceholderImage: Int, RawRepresentable{
             return "pp_network_error_icon"
         case .order:
             return "common_order_empty_icon"
+        case .other:
+            return "img"
         }
     }
 }
@@ -109,7 +112,12 @@ open class PlaceholderView: UIView {
     }
     
     func initDatas(){
-        placeHolderView.image = loadImageBundle(named: self.placeHolderIcon.rawValue)
+        switch self.placeHolderIcon {
+        case .other(let img):
+            placeHolderView.image = img
+        default:
+            placeHolderView.image = loadImageBundle(named: self.placeHolderIcon.rawValue)
+        }
         placeHolderLabel.text = self.placeHolderText
     }
     
@@ -124,7 +132,12 @@ open class PlaceholderView: UIView {
     }
     
     public func updateIcon(icon: PlaceholderImage) {
-        placeHolderView.image = loadImageBundle(named: icon.rawValue)
+        switch self.placeHolderIcon {
+        case .other(let img):
+            placeHolderView.image = img
+        default:
+            placeHolderView.image = loadImageBundle(named: self.placeHolderIcon.rawValue)
+        }
     }
     
     private var placeholderViewType: PlaceholderViewType = .other
